@@ -3,9 +3,8 @@
 # Functions are in utils file to support executing them manually for testing/debugging
 source setup_utils.sh
 
-num_nodes=4
-file_sizes="1k 2k 3k"
-#file_sizes="1m 25m 50m 100m"
+num_nodes=10
+file_sizes="1m 5m 10m"
 
 # First, create the docker containers
 create_docker_containers $num_nodes
