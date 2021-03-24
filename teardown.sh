@@ -2,6 +2,7 @@
 
 # Stop containers, if necessary
 for node in `docker container ls | grep ipfs_host | awk '{print $NF}'`; do
+    echo "Stopping $node"
     docker stop $node
 done
 
