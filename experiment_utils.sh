@@ -18,8 +18,7 @@ download_file_and_record_time() {
     num_fetchers=$6
 
     # Get filesize
-    # TODO: This is the stat command to use on a mac. Need to make more general.
-    filesize=$(stat -f %z "./node1_staging/${filename}")
+    filesize=`ls -l ./node1_staging/${filename} | awk '{print $5}'`
 
     # Retrieve files stored in node 1
     download_time=`{ time -p docker exec ${fetcher} ipfs get -o ./export/ $hash ; } 2>&1 | grep real | awk '{print $2}'`

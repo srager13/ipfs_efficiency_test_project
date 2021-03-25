@@ -20,10 +20,18 @@ fi
 
 
 # Test 1: one provider - one fetcher
-run_experiment 1 1 $experiment_data_file
+
+# Running this test 10 times to get comparable number of data points in all tests
+for i in `seq 1 10`; do 
+    run_experiment 1 1 $experiment_data_file
+done
 
 # Test 2: one provider - many fetchers
 run_experiment 1 9 $experiment_data_file
 
 # Test 3: many provider - many fetchers
-run_experiment 5 5 $experiment_data_file
+
+# Running this test 2 times to get comparable number of data points in all tests
+for i in `seq 1 2`; do 
+    run_experiment 5 5 $experiment_data_file
+done
