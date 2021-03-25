@@ -29,7 +29,7 @@ Files:
 The set of file sizes and numbers of providers to set up are specified at the top of setup.sh. This script will create a file for each (filesize, num providers) pair and copy that file to the data folders of the first num providers docker conainers. The script executes the command for each provider docker container to add their files to IPFS and store the returned hashes in a file in the local directory titled 'ipfs_hashes.txt' with the following format for each line: 
   "hash filename num_providers"
 
-By default, setup.sh will create 10 container nodes and files ranging in size from 10MB to 100MB for 1 provider and 5 providers. To change these default settings, edit the variables declared at the top of setup.sh.
+By default, setup.sh will create 10 container nodes and files of sizes 1MB, 5MB, and 10MB for 1 provider and 5 providers. To change these default settings, edit the variables declared at the top of setup.sh.
 
 ## Running experiments
 
