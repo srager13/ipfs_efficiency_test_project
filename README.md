@@ -4,9 +4,22 @@ This project is designed to test the efficiency of the IPFS Block Transfer proto
 
 ## Requirements
 
+WARNING: This project was created on Mac OS Mojave Version 10.14.6 and has not been tested on any other platforms.
+
 Docker (tested on 20.10.2) - Download and install from: https://docs.docker.com/get-docker/
 
-This project was created on Mac OS Mojave Version 10.14.6 and has not been tested on any other platforms.
+The plotting script requires:
+    - python >= 3.7
+    - pandas 1.2.3
+    - seaborn 0.11.1
+    - matplotlib 3.3.4
+If using conda, creating new conda environment with python >= 3.7 and installing pandas and seaborn is sufficient.
+```
+conda create -n ipfs_efficiency_test_project python=3.8
+conda activate ipfs_efficiency_test_project
+conda install pandas
+conda install seaborn
+```
 
 ## Setup
 
@@ -31,7 +44,12 @@ The fetchers will time how long the ipfs get command takes to finish, i.e. the d
 
 ## Plotting results
 
-TODO
+Plot results of the experiments with the following script, which takes two arguments: the experiment logfile and the directory to which the resulting plot should be saved. 
+
+Example: 
+```
+python plot_latency_experiment_results.py ./latency_experiment_03_23_21_09_48_PM/latency_experiment_results.log ./latency_experiment_03_23_21_09_48_PM
+```
 
 ## Teardown
 
