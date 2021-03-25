@@ -1,6 +1,6 @@
 # IPFS Efficiency Test Project
 
-This project is designed to test the efficiency of the IPFS Block Transfer protocol (bitswap). It works by creating a specified number of docker containers, each running IPFS. The nodes will create and add files of various size to IPFS and then run a series of experiments fetching those files, tracking the latency of download times for each experiment. 
+This project is designed to test the efficiency of IPFS. It works by creating a specified number of docker containers, each running IPFS. The nodes will create and add files of various size to IPFS and then run a series of experiments fetching those files, tracking the latency of download times for each experiment. 
 
 ## Requirements
 
@@ -33,7 +33,7 @@ By default, setup.sh will create 10 container nodes and files ranging in size fr
 
 ## Running experiments
 
-Execute the run_experiments.sh script to run the experiments of transferring files using IPFS and bitswap. By default, the experiments run are:
+Execute the run_experiments.sh script to run the experiments of transferring files using IPFS. By default, the experiments run are:
   - 1 provider, 1 fetcher
   - 1 provider, 9 fetchers
   - 5 provider, 5 fetchers
