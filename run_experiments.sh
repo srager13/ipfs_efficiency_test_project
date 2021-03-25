@@ -1,10 +1,12 @@
 #!/bin/bash
 source experiment_utils.sh
 
-experiment_data_file="$(date +"latency_experiment_%m_%d_%y_%I_%M_%p").log"
+experiment_data_dir="$(date +"latency_experiment_%m_%d_%y_%I_%M_%p")"
+mkdir $experiment_data_dir
+experiment_data_file=${experiment_data_dir}/latency_experiment_results.log
 echo "Experiment data file: $experiment_data_file"
 # Add header line to the data file
-echo "Number_Providers, Number_Fetchers, Filesize, Download_Time" > $experiment_data_file
+echo "Number_Providers,Number_Fetchers,Filesize,Download_Time" > $experiment_data_file
 
 get_num_nodes    
 num_nodes=$?

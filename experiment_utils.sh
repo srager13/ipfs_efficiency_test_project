@@ -27,7 +27,7 @@ download_file_and_record_time() {
     # Write data points to a file to analyze/plot later
     # Colummns: num providers, num fetchers, filesize, download time
     echo "$num_providers, $num_fetchers, $filesize, $download_time"
-    echo "$num_providers, $num_fetchers, $filesize, $download_time" >> $experiment_data_file
+    echo "$num_providers,$num_fetchers,$filesize,$download_time" >> $experiment_data_file
 }
 
 run_experiment() {
