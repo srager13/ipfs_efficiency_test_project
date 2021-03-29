@@ -31,14 +31,15 @@ create_docker_containers() {
             -p 127.0.0.1:${ipfs_port2}:${ipfs_port2} \
             ipfs/go-ipfs:latest
 
-        sleep 2
+        # Sleep to let ipfs release the lock in between commands
+        sleep 5
         # Change the IPFS port number to deconflict among docker containers all running on the same host
         echo "Changing API Port"
         docker exec ipfs_host${i} ipfs config --json Addresses.API "[\"/ip4/127.0.0.1/tcp/${ipfs_port2}\"]"
-        sleep 1
+        sleep 5
         echo "Changing Gateway Port"
         docker exec ipfs_host${i} ipfs config --json Addresses.Gateway "[\"/ip4/127.0.0.1/tcp/${ipfs_port3}\"]"
-        sleep 1
+        sleep 5
         echo "Changing Swarm Ports"
         docker exec ipfs_host${i} ipfs config --json Addresses.Swarm "[\"/ip4/0.0.0.0/tcp/${ipfs_port1}\", \"/ip6/::/tcp/${ipfs_port1}\", \"/ip4/0.0.0.0/udp/${ipfs_port1}/quic\", \"/ip6/::/udp/${ipfs_port1}/quic\"]"
         sleep 1
